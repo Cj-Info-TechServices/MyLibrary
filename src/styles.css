@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+#myAreaChart{
+    padding-left: 10px;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-bottom: 320px;
+    width: 96%;
+    height: 90%;
+}

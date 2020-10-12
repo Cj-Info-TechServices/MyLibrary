@@ -1,0 +1,39 @@
+<div class="container" role="main">
+    <div class="text-center pageTitleHeaders">
+        <h3>UPDATE BOOK STATUS</h3> 
+    </div>
+    <form (ngSubmit)="onSubmit(bookForm)" #bookForm="ngForm">
+        <!-- <div class="alert alert-success" [hidden]="!bookSaved">
+            <h3>Book successfully saved!</h3>
+        </div> -->
+        <div class="form-group">
+            <label for="selectedBook">Book:</label>
+            <!-- ngmodel and name attributes is required for template driven forms -->
+            <select required [(ngModel)]="bookToUpdate.name" name="selectedBook" #book="ngModel" class="form-control" (change)=onChange()>
+                <option value=""></option>
+                <option *ngFor="let bookObj of booksToUpdate" value="{{bookObj.name}}">{{bookObj.name}}</option>
+            </select>
+            <ng-template [ngIf]="book.touched && !book.valid">
+                <div class="alert alert-danger">Please select a book!</div>    
+            </ng-template>    
+        </div>
+        <div class="form-group">
+            <label for="selectedStatus">New Status:</label>
+            <select required [(ngModel)]="selectedStatus" name="selectedStatus" #status="ngModel" class="form-control" (change)=onChange()>
+                <option value=""></option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+            <ng-template [ngIf]="status.touched && !status.valid">
+                <div class="alert alert-danger">Reading status required!</div>    
+            </ng-template>  
+        </div>
+
+        <div class="form-group">
+            <label for="dateFinished">Date Completed:</label>
+            <input required [(ngModel)]="bookToUpdate.dateRead" name="dateFinished" id="dateFinished" type="date" class="form-control">
+        </div>
+        <!-- disable the button when form is invalid -->
+        <button type="submit" class="btn btn-primary" [disabled]="!bookForm.form.valid">Update</button>
+    </form>
+</div>
