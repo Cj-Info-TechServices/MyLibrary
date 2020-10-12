@@ -1,5 +1,11 @@
 # MyLibrary
 
+This project is a simple personalize library app that help you track your reading using charts and tabular views.
+
+Upcoming features
+  - Find reading buddies per book and location
+  - Precreated book database that allows you choose/select from
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
 ## Development server
